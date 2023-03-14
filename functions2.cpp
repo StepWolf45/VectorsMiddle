@@ -61,3 +61,34 @@ void itc_odd_even_analysis_lst(const vector <int> &lst){
     cout << "Сумма четных чисел: " << itc_sumlst(lst1) << "," << endl;
     cout<< "Сумма нечетных чисел: " << itc_sumlst(lst2) << "," << "\n";
 }
+
+void itc_pos_neg_analysis_lst(const vector <int> &lst){
+    setlocale(LC_ALL, "Rus");
+    vector <int> lst1, lst2, lst3;
+    itc_pos_neg_separator_lst(lst, lst1, lst2, lst3);
+    cout << "Положительные:" <<endl;
+    cout << "Количество чисел: " << lst3.size() << "," << endl;
+    cout << "Максимальная цифра: " << itc_max_lst(lst3) << "," << endl; 
+    cout << "Минимальная цифра: " << itc_min_lst(lst3) << "," << endl;
+    cout << "Сумма чисел: " << itc_sumlst(lst3) << "," <<endl; 
+    cout<<endl;
+    cout << "Отрицательные:" <<endl;
+    cout << "Количество чисел: " << lst1.size() << "\n";
+    cout << "Максимальная цифра: " << itc_max_lst(lst1) << "," << "\n";
+    cout << "Минимальная цифра: " << itc_min_lst(lst1)<<"," << "\n";
+    cout<< "Сумма чисел: "  << itc_sumlst(lst1) << "," << "\n";
+    int sr_plus = 0;
+    if (lst3.size() > 0){
+        sr_plus = itc_sumlst(lst3) / lst3.size();
+    }
+    int sr_minus = 0;
+    if (lst1.size() > 0){
+        sr_minus= itc_sumlst(lst1) / lst1.size();
+    }
+    cout << "Положительные:" <<endl;
+    cout << "Среднее значение: " << sr_plus << "," << endl;
+    cout << "Отрицательные:" <<endl;
+    cout << "Среднее значение: " << sr_minus << "," << "\n";
+    cout << endl;
+    cout << "Количество нулей: " << lst2.size() << endl;
+}
